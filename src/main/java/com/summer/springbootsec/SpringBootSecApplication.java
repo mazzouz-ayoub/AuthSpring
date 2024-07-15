@@ -37,7 +37,6 @@ public class SpringBootSecApplication {
                 accountServiceI.addRoleToUser("user3" , "CUSTOMER_MANAGER");
                 accountServiceI.addRoleToUser("user4" , "PRODUCT_MANAGER");
                 accountServiceI.addRoleToUser("user5" , "BILLS_MANAGER");
-                accountServiceI.addRoleToUser("user6" , "BILLS_MANAGER");
 
 
 
