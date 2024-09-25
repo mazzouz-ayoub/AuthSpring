@@ -1,0 +1,11 @@
+<body>
+<h1>
+  my stupid app test
+</h1>
+<button (click)="componentToShow = 'login'">
+  login
+</button>
+<app-login-form *ngIf="componentToShow === 'login'"></app-login-form>
+<app-public-content *ngIf="componentToShow === 'public'"></app-public-content>
+<app-private-content *ngIf="componentToShow === 'private'"></app-private-content>
+</body>
