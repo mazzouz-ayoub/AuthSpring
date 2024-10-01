@@ -1,25 +1,25 @@
 import { Component } from '@angular/core';
-import {Message} from "../message";
-import {MyHttpService} from "../my-http.service";
-
+import { MyHttpService } from "../my-http.service";
 
 @Component({
   selector: 'app-public-content',
   templateUrl: './public-content.component.html',
-  styleUrl: './public-content.component.css'
+  styleUrls: ['./public-content.component.css']
 })
 export class PublicContentComponent {
-  content : string ="";
+  content: string = "";
 
-  constructor(private  http: MyHttpService) {}
+  constructor(private http: MyHttpService) {}
 
-
-  ngOnInit():void {
-    this.http.getPrivate("/public/messages").subscribe((data:Message) => {
-      this.content = data.message ;
+  ngOnInit(): void {
+    this.http.get("/public/messages").subscribe(
+      (data: any) => {
+        this.content = data.message;
+      },
+      (error) => {
+        console.error('Erreur lors de la récupération des messages publics :', error);
+        alert(`Erreur: ${error.status} - ${error.message}`);
       }
-
     );
   }
-
 }
